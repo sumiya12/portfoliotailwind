@@ -20,6 +20,71 @@ import { FaNode, FaAws } from "react-icons/fa";
 import Fade from "react-reveal/Fade";
 
 export default function Banner() {
+  const icons = {
+    icon: [
+      {
+        pic: SiJavascript,
+        name: "JavaScript",
+      },
+      {
+        pic: FaReact,
+        name: "React JS",
+      },
+      {
+        pic: SiTypescript,
+        name: "Typescript",
+      },
+      {
+        pic: SiGithub,
+        name: "Github",
+      },
+      {
+        pic: SiBootstrap,
+        name: "Bootstrap",
+      },
+      {
+        pic: SiTailwindcss,
+        name: "Tailwindcss",
+      },
+      {
+        pic: SiHtml5,
+        name: "Html5",
+      },
+      {
+        pic: SiCss3,
+        name: "Css3",
+      },
+      {
+        pic: SiOracle,
+        name: "Oracle",
+      },
+      {
+        pic: SiMysql,
+        name: "Mysql",
+      },
+      {
+        pic: SiMongodb,
+        name: "Mongodb",
+      },
+      {
+        pic: SiExpress,
+        name: "Express",
+      },
+      {
+        pic: FaNode,
+        name: "Node",
+      },
+      {
+        pic: FaAws,
+        name: "Aws",
+      },
+      {
+        pic: SiHeroku,
+        name: "Heroku",
+      },
+    ],
+  };
+
   return (
     <div className="lg:mx-36 mx-6">
       <div className="md:flex items-center justify-around py-16">
@@ -63,21 +128,9 @@ export default function Banner() {
         </Fade>
         <Fade bottom>
           <div className="flex flex-wrap justify-center md:justify-start">
-            <Stack Icon={FaReact} name="React JS" />
-            <Stack Icon={SiJavascript} name="JavaScript" />
-            <Stack Icon={SiGithub} name="Github" />
-            <Stack Icon={SiMysql} name="MySql" />
-            <Stack Icon={SiTypescript} name="TypeScript" />
-            <Stack Icon={SiBootstrap} name="Bootstrap" />
-            <Stack Icon={SiTailwindcss} name="Tailwindcss" />
-            <Stack Icon={SiHtml5} name="Html5" />
-            <Stack Icon={SiCss3} name="Css3" />
-            <Stack Icon={FaNode} name="Node JS" />
-            <Stack Icon={SiExpress} name="Express JS" />
-            <Stack Icon={SiOracle} name="Oracle" />
-            <Stack Icon={SiMongodb} name="Mongodb" />
-            <Stack Icon={FaAws} name="Aws" />
-            <Stack Icon={SiHeroku} name="Heroku" />
+            {icons.icon.map((each, i) => {
+              return <Stack key={i} Icon={each.pic} name={each.name} />;
+            })}
           </div>
         </Fade>
       </div>
